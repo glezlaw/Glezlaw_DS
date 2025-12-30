@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge González, LL.M. - International Tax Advisory for Expats in Spain</title>
-    <meta name="description" content="From NIE to tax efficiency, your all-in-one solution. International tax advisory and expat services in Spain.">
+    <title>Jorge González, LL.M. | International Advisory for Expats in Spain</title>
+    <meta name="description" content="From NIE to tax optimization. Your all-in-one advisory solution for establishing yourself in Spain. Services in English, French, and Spanish.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --navy: #2C3E50;
-            --turquoise: #52D4A6;
-            --white: #FFFFFF;
+            --navy: #0A2463;
+            --light-navy: #1E3A8A;
+            --gold: #D4AF37;
             --light-gray: #F8F9FA;
-            --text-gray: #6B7280;
-            --border-gray: #E5E7EB;
+            --medium-gray: #E5E7EB;
+            --dark-gray: #374151;
+            --white: #FFFFFF;
         }
         
         * {
@@ -27,356 +30,341 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--navy);
+            color: var(--dark-gray);
             line-height: 1.6;
-            background: var(--white);
+            background-color: var(--white);
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, #1a2332 100%);
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+        }
+        
+        /* ===== HEADER & HERO ===== */
+        .header {
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
             color: var(--white);
-            padding: 4rem 2rem 5rem;
+            padding: 6rem 2rem 5rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .logo-container {
-            margin-bottom: 2.5rem;
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('Escudo.jpg');
+            background-size: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.08;
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
         
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(82, 212, 166, 0.2);
-            border: 4px solid var(--turquoise);
+            margin: 0 auto 2rem;
+            border: 3px solid var(--gold);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         
         h1 {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--white);
         }
         
         .tagline {
-            font-size: 1.25rem;
-            color: var(--turquoise);
+            font-size: 1.4rem;
+            color: var(--gold);
             font-weight: 600;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 1rem;
+            margin: 0 auto 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
         }
         
-        /* Container */
-        .container {
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+        
+        /* ===== TWO-COLUMN SECTIONS ===== */
+        .section-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
         
-        /* Profile Photo in About Section */
-        .profile-photo-container {
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
             text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
+            position: relative;
         }
         
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto;
+        .section-title::after {
+            content: '';
             display: block;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            border: 4px solid var(--turquoise);
+            width: 80px;
+            height: 4px;
+            background-color: var(--gold);
+            margin: 1rem auto 0;
         }
         
-        /* Two Column Layout */
-        .two-col {
+        /* About Me Section */
+        .two-columns {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 2rem 0 4rem;
+            gap: 4rem;
+            align-items: start;
         }
         
-        .col {
-            background: var(--white);
+        .column {
+            padding: 2.5rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .col-header {
+        .column-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 3px solid var(--turquoise);
+            border-bottom: 2px solid var(--gold);
         }
         
         .flag {
             font-size: 2rem;
         }
         
-        .col-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy);
+        .column-title {
+            font-size: 1.8rem;
+            margin: 0;
         }
         
-        /* Section */
-        section {
-            padding: 4rem 0;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--navy);
-        }
-        
-        /* About Section */
         .credentials {
             list-style: none;
-            margin: 1.5rem 0;
+            margin-bottom: 2rem;
         }
         
         .credentials li {
             padding: 0.5rem 0;
-            font-size: 0.95rem;
-            color: var(--text-gray);
+            font-size: 1rem;
+            color: var(--dark-gray);
+            position: relative;
+            padding-left: 1.8rem;
         }
         
-        .credentials li:before {
-            content: "✓ ";
-            color: var(--turquoise);
+        .credentials li::before {
+            content: "✓";
+            color: var(--gold);
             font-weight: bold;
-            margin-right: 0.5rem;
+            position: absolute;
+            left: 0;
         }
         
-        .highlight {
-            background: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-top: 1.5rem;
-            border-left: 4px solid var(--turquoise);
+        .highlight-box {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--gold);
         }
         
-        .highlight p {
+        .highlight-box p {
             margin-bottom: 1rem;
+            line-height: 1.7;
         }
         
-        .highlight p:last-child {
+        .highlight-box p:last-child {
             margin-bottom: 0;
         }
         
-        /* Services - CORRECCIÓN APLICADA */
-        .service {
-            background: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            /* Eliminado el margin-top que causaba desalineación */
+        /* ===== SERVICES ===== */
+        .services-section {
+            background-color: var(--light-gray);
         }
         
-        .service:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--navy);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
         .service-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-            /* Alineación vertical consistente */
-            align-self: flex-start;
-            margin-top: 0.25rem;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .service-content {
-            flex: 1;
-        }
-        
-        .service h3 {
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
             color: var(--navy);
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
         }
         
-        .service p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .service-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
         }
         
-        /* Contact Form */
-        .form-section {
-            background: var(--light-gray);
-            padding: 4rem 2rem;
+        /* ===== CONTACT ===== */
+        .contact-section {
+            background: linear-gradient(135deg, var(--light-gray) 0%, #EFF6FF 100%);
         }
         
-        form {
-            max-width: 600px;
+        .contact-container {
+            max-width: 800px;
             margin: 0 auto;
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
+        .contact-info {
+            text-align: center;
+            margin-bottom: 3rem;
         }
         
-        label {
-            display: block;
-            font-weight: 600;
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item h4 {
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: var(--navy);
         }
         
-        input, textarea {
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--border-gray);
+            padding: 0.9rem 1.2rem;
+            border: 2px solid var(--medium-gray);
             border-radius: 8px;
             font-family: inherit;
             font-size: 1rem;
             transition: border-color 0.3s;
         }
         
-        input:focus, textarea:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
-            border-color: var(--turquoise);
+            border-color: var(--gold);
         }
         
-        textarea {
-            min-height: 120px;
+        .form-group textarea {
+            min-height: 150px;
             resize: vertical;
         }
         
-        button[type="submit"] {
-            background: var(--turquoise);
-            color: var(--navy);
+        .submit-button {
+            background-color: var(--navy);
+            color: var(--white);
             border: none;
             padding: 1rem 3rem;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             width: 100%;
         }
         
-        button[type="submit"]:hover {
+        .submit-button:hover {
+            background-color: var(--light-navy);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(82, 212, 166, 0.3);
+            box-shadow: 0 8px 20px rgba(10, 36, 99, 0.2);
         }
         
-        /* Video Calls Section */
-        .video-calls {
-            background: var(--navy);
-            color: var(--white);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .video-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .video-btn {
-            background: var(--turquoise);
-            color: var(--navy);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        
-        .video-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(82, 212, 166, 0.3);
-        }
-        
-        /* Payment */
-        .payment {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: var(--light-gray);
-        }
-        
-        .pay-btn {
-            background: var(--turquoise);
-            color: var(--navy);
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-        
-        .pay-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(82, 212, 166, 0.3);
-        }
-        
-        /* Contact Info */
-        .contact-info {
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        
-        .contact-methods {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.1rem;
-        }
-        
-        .contact-item a {
-            color: var(--navy);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .contact-item a:hover {
-            color: var(--turquoise);
-        }
-        
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            margin: 2rem auto;
-            display: block;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
+        /* ProtonMail Badge */
         .proton-badge {
             display: flex;
             align-items: center;
@@ -387,7 +375,8 @@
             background: var(--light-gray);
             border-radius: 12px;
             max-width: 600px;
-            margin: 2rem auto;
+            margin: 3rem auto 0;
+            text-align: center;
         }
         
         .proton-logo-link {
@@ -398,7 +387,7 @@
         }
         
         .proton-logo {
-            height: 60px;
+            height: 30px;
             width: auto;
             display: block;
         }
@@ -406,116 +395,157 @@
         .proton-badge p {
             margin: 0;
             line-height: 1.5;
+            color: var(--dark-gray);
         }
         
-        .proton-badge a {
-            color: var(--navy);
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s;
         }
         
-        .proton-badge a:hover {
-            color: var(--turquoise);
+        .footer-links a:hover {
+            color: var(--gold);
         }
         
-        /* Footer */
-        footer {
-            background: var(--navy);
-            color: var(--white);
+        .qr-section {
             text-align: center;
-            padding: 2rem;
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
         }
         
-        .footer-website {
-            color: var(--turquoise);
-            font-weight: 600;
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
+            .header {
+                padding: 4rem 1.5rem 3.5rem;
+            }
+            
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
-            .two-col {
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 3.5rem 0;
+            }
+            
+            .section-container {
+                padding: 0 1.5rem;
+            }
+            
+            .column {
+                padding: 1.8rem;
+            }
+            
+            .services-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
             
-            .logo {
-                width: 120px;
-                height: 120px;
+            .contact-form {
+                padding: 2rem;
             }
             
-            .profile-photo {
-                width: 160px;
-                height: 160px;
-            }
-            
-            .video-buttons {
-                flex-direction: column;
-                align-items: stretch;
-                max-width: 300px;
-                margin: 2rem auto 0;
-            }
-            
-            .contact-methods {
-                flex-direction: column;
-            }
-            
-            .service {
-                flex-direction: column;
-                align-items: center;
+            .footer-content {
+                grid-template-columns: 1fr;
                 text-align: center;
-            }
-            
-            .service-icon {
-                margin-top: 0;
-            }
-            
-            .proton-badge {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .proton-logo {
-                height: 50px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="logo-container">
-            <!-- Este es tu Escudo.jpg -->
+    <!-- ===== HEADER / HERO ===== -->
+    <header class="header">
+        <div class="header-content">
             <img src="Escudo.jpg" alt="González Family Coat of Arms" class="logo">
+            <h1>Happy Expats,<br>Peaceful Businesses</h1>
+            <p class="tagline">International Advisory for Establishing in Spain</p>
+            <p class="subtitle">
+                Specialized support for expatriates and international businesses on the Costa del Sol. 
+                From tax optimization to residency planning and business advisory.
+            </p>
+            <a href="#contact" class="cta-button">Start Your Spanish Journey</a>
         </div>
-        
-        <h1>Jorge González, LL.M.</h1>
-        <p class="tagline">International Expat Advisor / Conseiller pour Expatriés</p>
-        <p class="subtitle">
-            From NIE to tax efficiency, your all-in-one solution / 
-            Du NIE à l'efficacité fiscale, votre solution tout-en-un
-        </p>
-    </div>
+    </header>
 
-    <!-- About Section -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">About Me / À propos</h2>
+    <!-- ===== ABOUT ME ===== -->
+    <section id="about">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
             
-            <div class="profile-photo-container">
-                <img src="jorge-photo.jpg" alt="Jorge González" class="profile-photo">
-            </div>
-            
-            <div class="two-col">
+            <div class="two-columns">
                 <!-- English Column -->
-                <div class="col">
-                    <div class="col-header">
+                <div class="column">
+                    <div class="column-header">
                         <span class="flag">🇬🇧</span>
-                        <h3 class="col-title">English</h3>
+                        <h3 class="column-title">English</h3>
                     </div>
                     
                     <ul class="credentials">
@@ -525,7 +555,7 @@
                         <li>Master of Arts in Contemporary European Studies (University of Sussex)</li>
                     </ul>
                     
-                    <div class="highlight">
+                    <div class="highlight-box">
                         <p>With extensive knowledge in international law and deep understanding of expatriate challenges, I provide personalized solutions for individuals and businesses establishing themselves in Spain.</p>
                         <p>My practice focuses exclusively on serving the international community, offering clear guidance through tax optimization, residency planning, and legal compliance in English, French, and Spanish.</p>
                         <p>My approach combines legal expertise with a genuine understanding of the personal and professional transitions involved in relocating to a new country.</p>
@@ -533,10 +563,10 @@
                 </div>
                 
                 <!-- French Column -->
-                <div class="col">
-                    <div class="col-header">
+                <div class="column">
+                    <div class="column-header">
                         <span class="flag">🇫🇷</span>
-                        <h3 class="col-title">Français</h3>
+                        <h3 class="column-title">Français</h3>
                     </div>
                     
                     <ul class="credentials">
@@ -546,7 +576,7 @@
                         <li>Master of Arts in Contemporary European Studies (University of Sussex)</li>
                     </ul>
                     
-                    <div class="highlight">
+                    <div class="highlight-box">
                         <p>Avec une connaissance approfondie du droit international et une compréhension des défis des expatriés, je propose des solutions personnalisées pour les particuliers et entreprises s'établissant en Espagne.</p>
                         <p>Ma pratique se concentre exclusivement sur la communauté internationale, offrant des conseils clairs en matière d'optimisation fiscale, de planification de résidence et de conformité légale en anglais, français et espagnol.</p>
                         <p>Mon approche combine expertise juridique et compréhension authentique des transitions personnelles et professionnelles liées à la relocalisation.</p>
@@ -556,161 +586,149 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section style="background: var(--light-gray);">
-        <div class="container">
-            <h2 class="section-title">Services / Services</h2>
-            <div class="two-col">
-                <!-- English Column -->
-                <div class="col">
-                    <div class="col-header">
-                        <span class="flag">🇬🇧</span>
-                        <h3 class="col-title">English</h3>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">🏛️</div>
-                        <div class="service-content">
-                            <h3>Beckham Regime</h3>
-                            <p>Special tax scheme for relocated workers with a fixed 24% rate for 6 years.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">📍</div>
-                        <div class="service-content">
-                            <h3>Tax Residency Strategy</h3>
-                            <p>Customized planning to optimize your fiscal residence and integration in Spain.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">🌍</div>
-                        <div class="service-content">
-                            <h3>International Tax Planning</h3>
-                            <p>Cross-border structures for income, investments, and estate planning for expats.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">✨</div>
-                        <div class="service-content">
-                            <h3>Comprehensive Relocation Support</h3>
-                            <p>From NIE to tax optimization, housing or business premises search, and administrative procedures—comprehensive guidance and support for individuals and businesses relocating to Spain.</p>
-                        </div>
-                    </div>
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="services-section">
+        <div class="section-container">
+            <h2 class="section-title">My Services</h2>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Residency & Fiscal Planning</h3>
+                    <p>Guidance on Spanish residency permits, NIE applications, and strategic tax planning including the Beckham Law regime for qualifying professionals.</p>
                 </div>
                 
-                <!-- French Column -->
-                <div class="col">
-                    <div class="col-header">
-                        <span class="flag">🇫🇷</span>
-                        <h3 class="col-title">Français</h3>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">🏛️</div>
-                        <div class="service-content">
-                            <h3>Régime Beckham</h3>
-                            <p>Régime fiscal spécial pour travailleurs déplacés avec taux fixe de 24% pendant 6 ans.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">📍</div>
-                        <div class="service-content">
-                            <h3>Stratégie de Résidence Fiscale</h3>
-                            <p>Planification personnalisée pour optimiser votre résidence et intégration en Espagne.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">🌍</div>
-                        <div class="service-content">
-                            <h3>Planification Fiscale Internationale</h3>
-                            <p>Structures transfrontalières pour revenus, investissements et planification successorale pour expats.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service">
-                        <div class="service-icon">✨</div>
-                        <div class="service-content">
-                            <h3>Accompagnement Complet à la Relocalisation</h3>
-                            <p>De la demande de NIE à l'optimisation fiscale, recherche de logement ou locaux professionnels, et démarches administratives—accompagnement complet pour particuliers et entreprises s'installant en Espagne.</p>
-                        </div>
-                    </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Tax Optimization</h3>
+                    <p>Strategic tax planning for expatriates, including analysis of applicable tax regimes and optimization of cross-border income and investments.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Business Advisory</h3>
+                    <p>Support for international businesses and entrepreneurs establishing operations in Spain, including company structuring and compliance guidance.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Property Acquisition Support</h3>
+                    <p>Assistance with the property acquisition process in Spain, including due diligence review and coordination with local legal professionals.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">🛂</div>
+                    <h3>Comprehensive Relocation Support</h3>
+                    <p>End-to-end support for individuals and families relocating to Spain, from administrative procedures to cultural integration guidance.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Cross-Border Succession Planning</h3>
+                    <p>Advisory on international inheritance matters and succession planning for assets located in multiple jurisdictions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <div class="form-section">
-        <div class="container">
-            <h2 class="section-title">Inquiry / Demande</h2>
-            <form action="mailto:jorge@glez.law" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Your Name / Votre Nom</label>
-                    <input type="text" id="name" name="name" required>
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Ready to begin your Spanish journey?</h3>
+                    <p>Contact me for a confidential consultation regarding your residency, tax, or business needs in Spain.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Response Time</h4>
+                            <p>Within 24 hours on business days</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Languages</h4>
+                            <p>English, French, Spanish, Portuguese</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Your Email / Votre Email</label>
-                    <input type="email" id="email" name="email" required>
+                
+                <form class="contact-form" action="mailto:jorge@glez.law" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service of Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="residency">Residency & Fiscal Planning</option>
+                            <option value="tax">Tax Optimization</option>
+                            <option value="business">Business Advisory</option>
+                            <option value="property">Property Acquisition Support</option>
+                            <option value="relocation">Comprehensive Relocation Support</option>
+                            <option value="succession">Cross-Border Succession Planning</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+                
+                <!-- ProtonMail Badge with Logo -->
+                <div class="proton-badge">
+                    <a href="https://proton.me" target="_blank" rel="noopener" class="proton-logo-link">
+                        <img src="protonmail-logo.png" alt="Proton - Privacy by default" class="proton-logo">
+                    </a>
+                    <p>We use <a href="https://proton.me" target="_blank" rel="noopener">Proton</a> for the security of your information / Nous utilisons <a href="https://proton.me" target="_blank" rel="noopener">Proton</a> pour la sécurité de vos informations</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Your Question / Votre Question</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Send / Envoyer</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Video Calls Section -->
-    <div class="video-calls">
-        <h2 class="section-title">Video Calls / Appels Vidéo</h2>
-        <div class="video-buttons">
-            <a href="https://meet.jit.si/glezlaw" target="_blank" class="video-btn">Join Jitsi / Rejoindre Jitsi</a>
-            <a href="https://whereby.com/glezlaw" target="_blank" class="video-btn">Join Whereby / Rejoindre Whereby</a>
-        </div>
-    </div>
-
-    <!-- Payment Section -->
-    <div class="payment">
-        <h2 class="section-title">Payment / Paiement</h2>
-        <!-- Reemplaza "#" con tu enlace de Stripe cuando lo tengas -->
-        <a href="#" class="pay-btn">Pay Online / Payer en ligne</a>
-    </div>
-
-    <!-- Contact Info Section -->
-    <div class="contact-info">
-        <h2 class="section-title">Contact / Contact</h2>
-        <div class="contact-methods">
-            <div class="contact-item">
-                <span>📧</span>
-                <a href="mailto:jorge@glez.law">jorge@glez.law</a>
             </div>
-            <div class="contact-item">
-                <span>📱</span>
-                <a href="tel:+34635799282">+34 635 79 92 82</a>
-            </div>
         </div>
-        
-        <img src="qr-code(1).png" alt="WhatsApp QR Code" class="qr-code">
-        
-        <!-- CORRECCIÓN APLICADA: ProtonMail logo -->
-        <div class="proton-badge">
-            <a href="https://proton.me" target="_blank" rel="noopener" class="proton-logo-link">
-                <!-- Usa tu archivo protonmail-logo.png -->
-                <img src="protonmail-logo.png" alt="Proton - Privacy by default" class="proton-logo">
-            </a>
-            <p>We use <a href="https://proton.me" target="_blank" rel="noopener">Proton</a> for the security of your information / Nous utilisons <a href="https://proton.me" target="_blank" rel="noopener">Proton</a> pour la sécurité de vos informations</p>
-        </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>&copy; 2025 <span class="footer-website">Glez.law</span> - Jorge González, LL.M.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Jorge González, LL.M.</h3>
+                <p>International advisory services for expatriates and businesses establishing themselves in Spain. Your trusted partner for a successful transition to the Costa del Sol.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">My Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section qr-section">
+                <h3>Save Our Contact</h3>
+                <img src="qr-code(1).png" alt="QR Code" class="qr-code">
+                <p>Scan to save contact details</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Jorge González, LL.M. | International advisory for expatriates in Spain</p>
+        </div>
     </footer>
 </body>
 </html>
